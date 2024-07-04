@@ -1,6 +1,6 @@
-package com.kwan.config.auth;
+package com.gwan.config.auth;
 
-import com.kwan.domain.user.Users;
+import com.gwan.domain.user.Users;
 import lombok.Getter;
 
 import java.io.Serializable;

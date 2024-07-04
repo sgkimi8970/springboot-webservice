@@ -1,4 +1,4 @@
-package com.kwan.config.auth;
+package com.gwan.config.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
-package com.kwan.config.auth;
+package main.java.com.gwan.config.auth;
 
-import com.kwan.domain.user.UserRepository;
-import com.kwan.domain.user.Users;
+import com.gwan.domain.user.UserRepository;
+import com.gwan.domain.user.Users;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

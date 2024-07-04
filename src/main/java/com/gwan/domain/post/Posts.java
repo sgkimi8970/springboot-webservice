@@ -1,18 +1,16 @@
-package com.kwan.domain.post;
+package com.gwan.domain.post;
 
-
-import com.kwan.domain.BaseTimeEntity;
+import com.gwan.domain.BaseTimeEntity;
+import com.gwan.web.dto.PostsDto;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-
 @Getter
 @NoArgsConstructor
 @Entity
 public class Posts extends BaseTimeEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,5 +28,10 @@ public class Posts extends BaseTimeEntity {
         this.title=title;
         this.content=content;
         this.author=author;
+    }
+
+    public void update(PostsDto postsDto){
+        this.title=postsDto.getTitle();
+        this.content=postsDto.getContent();
     }
 }

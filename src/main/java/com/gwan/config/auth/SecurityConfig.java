@@ -1,6 +1,6 @@
-package com.kwan.config.auth;
+package com.gwan.config.auth;
 
-import com.kwan.domain.user.Role;
+import com.gwan.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .headers( headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .authorizeHttpRequests( auth ->
                         auth.requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
-                                //.requestMatchers("/api/v1/**").hasRole(Role.USER.name())
+                                .requestMatchers("/api/v1/**").hasRole(Role.USER.name())
                                 .anyRequest().authenticated()
                 )
                 .logout( logout -> logout.logoutSuccessUrl("/"))

@@ -1,4 +1,4 @@
-package com.kwan.config.auth;
+package com.gwan.config.auth;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

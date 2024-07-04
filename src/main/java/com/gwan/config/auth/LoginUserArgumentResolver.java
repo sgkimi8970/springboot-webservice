@@ -1,4 +1,4 @@
-package com.kwan.config.auth;
+package com.gwan.config.auth;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

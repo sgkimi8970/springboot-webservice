@@ -1,4 +1,4 @@
-package com.kwan.domain;
+package com.gwan.domain;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

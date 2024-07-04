@@ -1,45 +1,38 @@
-package com.kwan;
+package com.gwan;
 
-public class BaseBallGame {
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-    public static void main(String[] args){
+public class BaseballGame {
+    public String getScore( String given, String input ){
+        String[] ma = given.split("");
+        String[] pa = input.split("");
 
-        BaseBallGame bbg = new BaseBallGame();
-
-        bbg.startGame();
-    }
-
-    private void startGame() {
-    }
-
-    public String getScore(String hidden, String guessed){
-
-        int strike = 0;
-        int ball = 0;
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 0; i < 3; i++) {
-            if (hidden.charAt(i) == guessed.charAt(i)) {
-                strike++;
-            } else {
-                for (int j = 0; j < 3; j++) {
-                    if (hidden.charAt(i) == guessed.charAt(j)) {
-                        ball++;
+        //채점시작
+        int strikeCount = 0;
+        int ballCount = 0;
+        for(int i = 0; i < ma.length; i++){
+            for(int j = 0; j < pa.length; j++){
+                if(ma[i].equals(pa[j])){
+                    if(i == j){
+                        strikeCount++;
+                    }
+                    else{
+                        ballCount++;
                     }
                 }
             }
         }
 
-        if(strike == 0 && ball == 0 )
-            return null;
-
-        if (strike > 0) {
-            result.append(strike).append("S");
+        //결과출력
+        String strResult = "";
+        if(strikeCount == 0 && ballCount == 0){
+            strResult = "(OUTPUT) (null)";
         }
-        if (ball > 0) {
-            result.append(ball).append("B");
+        else{
+            strResult = "(OUTPUT) " + (strikeCount > 0 ? strikeCount+"S" : "") + (ballCount > 0 ? ballCount+"B" : "");
         }
 
-        return result.toString();
+        return strResult;
     }
 }
